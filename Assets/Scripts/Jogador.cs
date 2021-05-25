@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Jogador : MonoBehaviour
 {
+    public float velocidade = 2f;
+
     // Start é chamado uma vez assim que o jogo inicia
     void Start()
     {
@@ -19,8 +21,8 @@ public class Jogador : MonoBehaviour
         // Para alterar a posição do jogador ou de qualquer outro objeto, usamos o componente Transform
         // O componente Transform pode ser acessado diretamente por QUALQUER script.
 
-        var h = Input.GetAxis("Horizontal");
-        var v = Input.GetAxis("Vertical");
+        var h = Input.GetAxis("Horizontal") * velocidade * Time.deltaTime;
+        var v = Input.GetAxis("Vertical") * velocidade * Time.deltaTime;
 
         transform.Translate(h, v, 0);
     }
