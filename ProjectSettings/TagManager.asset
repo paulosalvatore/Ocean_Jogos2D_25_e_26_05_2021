@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fundo
+    uniqueID: 70677351
+    locked: 0
+  - name: Jogador
+    uniqueID: 3109443251
+    locked: 0
+  - name: Inimigo
+    uniqueID: 1309441991
+    locked: 0
+  - name: Interface
+    uniqueID: 3116349247
+    locked: 0
