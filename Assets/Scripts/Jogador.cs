@@ -39,7 +39,7 @@ public class Jogador : MonoBehaviour
 
     private void Atirar()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             // print("Atirar!!!");
 
