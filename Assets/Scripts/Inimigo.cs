@@ -8,13 +8,11 @@ public class Inimigo : MonoBehaviour
 
     GameObject jogador;
 
-    // Start is called before the first frame update
     void Start()
     {
         jogador = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
         var direcao = (jogador.transform.position - transform.position).normalized;
