@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Jogador : MonoBehaviour
 {
@@ -10,10 +11,21 @@ public class Jogador : MonoBehaviour
 
     public GameObject projetilPrefab;
 
+    int pontos = 0;
+
+    public Text pontosText;
+
+    public void AdicionarPontos()
+    {
+        pontos = pontos + 1;
+
+        pontosText.text = "Pontos: " + pontos;
+    }
+
     // Start é chamado uma vez assim que o jogo inicia
     void Start()
     {
-
+        pontosText.text = "Pontos: 0";
     }
 
     // Update é chamado o tempo todo enquanto o jogo estiver rodando

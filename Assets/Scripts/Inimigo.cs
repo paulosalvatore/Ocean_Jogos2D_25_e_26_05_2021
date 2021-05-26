@@ -24,6 +24,9 @@ public class Inimigo : MonoBehaviour
     {
         if (other.CompareTag("Projétil"))
         {
+            var jogadorScript = jogador.GetComponent<Jogador>();
+            jogadorScript.AdicionarPontos();
+
             Destroy(gameObject);
 
             Destroy(other.gameObject);
