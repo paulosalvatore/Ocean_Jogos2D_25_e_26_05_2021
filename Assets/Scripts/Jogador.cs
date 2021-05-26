@@ -30,16 +30,29 @@ public class Jogador : MonoBehaviour
         {
             // print("Atirar!!!");
 
+            // Clonamos o Prefab e adicionamos esse clone na cena
             var projetilClone = Instantiate(projetilPrefab);
 
+            // Aplicamos a mesma posição do jogador para o clone do projétil
             projetilClone.transform.position = transform.position;
 
+            // Obtemos a posição atual do mouse (o valor atualmente está em pixels, de acordo com o tamanho da tela)
             var mousePosition = Input.mousePosition;
+            // Como a MainCamera está no Z -10 (negativo), precisamos falar que o mouse está em Z 10 (positivo)
+            // Isso fará com que a MainCamera consiga converter os valores do mouse para a posição Z 0 (10 - 10 = 0)
             mousePosition.z = -Camera.main.transform.position.z;
 
+            // Convertemos a posição do mouse (relativo a tela) para uma posição no mundo (relativo a cena)
             var worldMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            // Como essa posição do mouse convertida para o mundo é o nosso destino, subtraímos da posição atual
+            // Essa subtração resulta em um Vector3 com direção e magnitude.
+            // Eliminamos a magnitude através do 'normalized'.
             var direcao = (worldMousePosition - transform.position).normalized;
 
+            // Agora, com a direção calculada, falamos que o clone do projetil irá sempre apontar para essa direção
+            // Como estamos em um jogo 2D, alteramos o valor de 'transform.up', pois 'up' representa a frente desse objeto.
+            // Transform.up está relacionado ao eixo Y.
+            // Em um jogo 3D, a frente do objeto é representada por 'transform.forward', que está relacionado ao eixo Z.
             projetilClone.transform.up = direcao;
         }
     }
