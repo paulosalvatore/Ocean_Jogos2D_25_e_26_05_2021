@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Jogador : MonoBehaviour
 {
@@ -68,5 +69,13 @@ public class Jogador : MonoBehaviour
         var v = Input.GetAxis("Vertical") * velocidade * Time.deltaTime;
 
         transform.Translate(h, v, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Inimigo"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

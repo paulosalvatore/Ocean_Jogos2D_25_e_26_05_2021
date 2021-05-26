@@ -216,6 +216,8 @@ GameObject:
   - component: {fileID: 63740779}
   - component: {fileID: 63740778}
   - component: {fileID: 63740780}
+  - component: {fileID: 63740782}
+  - component: {fileID: 63740781}
   m_Layer: 0
   m_Name: Jogador
   m_TagString: Player
@@ -302,6 +304,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidade: 12
   projetilPrefab: {fileID: 1775602987146784898, guid: 894aa29cb9e63b94499bd0f3fb1946ad, type: 3}
+--- !u!60 &63740781
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63740777}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.49409798, y: 0.0516875}
+    oldSize: {x: 1.7, y: 3.3}
+    newSize: {x: 1.7, y: 3.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.09346239, y: 2.7893791}
+      - {x: -0.6488036, y: 2.9507365}
+      - {x: -0.8156857, y: 2.0979495}
+      - {x: -0.30040497, y: 1.6204823}
+      - {x: -0.35696182, y: 1.0292392}
+      - {x: -0.36718002, y: 0.02670379}
+      - {x: -0.0896917, y: 0.020769432}
+      - {x: 0.43595433, y: 0.008618498}
+      - {x: 0.4287964, y: 0.6960615}
+      - {x: 0.34195632, y: 1.6234764}
+      - {x: 0.7870428, y: 2.1515446}
+      - {x: 0.65382844, y: 2.536158}
+--- !u!50 &63740782
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63740777}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,9 +456,11 @@ GameObject:
   - component: {fileID: 2103325135}
   - component: {fileID: 2103325134}
   - component: {fileID: 2103325136}
+  - component: {fileID: 2103325137}
+  - component: {fileID: 2103325138}
   m_Layer: 0
   m_Name: Inimigo
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,3 +543,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 6
+--- !u!50 &2103325137
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103325133}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &2103325138
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103325133}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.4, y: 1.5}
+    newSize: {x: 1.4, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.32784748, y: 1.4920785}
+      - {x: -0.44374907, y: 1.0750973}
+      - {x: -0.43708575, y: 0.4348712}
+      - {x: -0.29001808, y: 0.11004591}
+      - {x: 0.2994175, y: 0.124722004}
+      - {x: 0.2994696, y: 0.41911626}
+      - {x: 0.31251335, y: 0.73204684}
+      - {x: 0.419734, y: 1.2499256}
+      - {x: 0.29319823, y: 1.4663229}
